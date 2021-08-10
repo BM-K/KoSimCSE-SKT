@@ -5,8 +5,13 @@
 ## Installation
 ```
 git clone https://github.com/BM-K/KoSimCSE.git
+cd KoSimCSE
+git clone https://github.com/SKTBrain/KoBERT.git
+cd KoBERT
 pip install -r requirements.txt
 pip install .
+cd ..
+pip install -r requirements.txt
 ```
 ## Training - only supervised
  - Model
