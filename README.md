@@ -35,19 +35,97 @@ pip install .
   - Using BERT [CLS] token representation
   - Pre-Trained model check point <br>
     - [Google Sharing](https://drive.google.com/drive/folders/1qiqqIucgqavAMmAn1HFJyLL9LZ2U6cbx?usp=sharing)
+    - ./output/nli_checkpoint.pt
 
 ## Performance
 |Model|Cosine Pearson|Cosine Spearman|Euclidean Pearson|Euclidean Spearman|Manhattan Pearson|Manhattan Spearman|Dot Pearson|Dot Spearman|
 |:------------------------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 |KoSBERT_SKT*|78.81|78.47|77.68|77.78|77.71|77.83|75.75|75.22|
-|KoSimCSE_SKT|0|0|0|0|0|0|0|0|
+|KoSimCSE_SKT|**81.55**|**82.11**|**81.70**|**81.69**|**81.65**|**81.60**|**78.19**|**77.18**|
  - \*: [KoSBERT_SKT](https://github.com/BM-K/KoSentenceBERT_SKT)
 ## Example Downstream Task
 ### Semantic Search
+```
+python SemanticSearch.py
+```
 ```python
+def main():
+    model_ckpt = './output/nli_checkpoint.pt'
+    model, transform, device = example_model_setting(model_ckpt)
+
+    # Corpus with example sentences
+    corpus = ['한 남자가 음식을 먹는다.',
+              '한 남자가 빵 한 조각을 먹는다.',
+              '그 여자가 아이를 돌본다.',
+              '한 남자가 말을 탄다.',
+              '한 여자가 바이올린을 연주한다.',
+              '두 남자가 수레를 숲 속으로 밀었다.',
+              '한 남자가 담으로 싸인 땅에서 백마를 타고 있다.',
+              '원숭이 한 마리가 드럼을 연주한다.',
+              '치타 한 마리가 먹이 뒤에서 달리고 있다.']
+
+    inputs_corpus = convert_to_tensor(corpus, transform)
+
+    corpus_embeddings = model.encode(inputs_corpus, device)
+
+    # Query sentences:
+    queries = ['한 남자가 파스타를 먹는다.',
+               '고릴라 의상을 입은 누군가가 드럼을 연주하고 있다.',
+               '치타가 들판을 가로 질러 먹이를 쫓는다.']
+
+    # Find the closest 5 sentences of the corpus for each query sentence based on cosine similarity
+    top_k = 5
+    for query in queries:
+        query_embedding = model.encode(convert_to_tensor([query], transform), device)
+        cos_scores = pytorch_cos_sim(query_embedding, corpus_embeddings)[0]
+        cos_scores = cos_scores.cpu().detach().numpy()
+
+        top_results = np.argpartition(-cos_scores, range(top_k))[0:top_k]
+
+        print("\n\n======================\n\n")
+        print("Query:", query)
+        print("\nTop 5 most similar sentences in corpus:")
+
+        for idx in top_results[0:top_k]:
+            print(corpus[idx].strip(), "(Score: %.4f)" % (cos_scores[idx]))
 ```
-<br> Result :
+<br> Result:
 ```
+Query: 한 남자가 파스타를 먹는다.
+
+Top 5 most similar sentences in corpus:
+한 남자가 음식을 먹는다. (Score: 0.6002)
+한 남자가 빵 한 조각을 먹는다. (Score: 0.5938)
+치타 한 마리가 먹이 뒤에서 달리고 있다. (Score: 0.0696)
+한 남자가 말을 탄다. (Score: 0.0328)
+원숭이 한 마리가 드럼을 연주한다. (Score: -0.0048)
+
+
+======================
+
+
+Query: 고릴라 의상을 입은 누군가가 드럼을 연주하고 있다.
+
+Top 5 most similar sentences in corpus:
+원숭이 한 마리가 드럼을 연주한다. (Score: 0.6489)
+한 여자가 바이올린을 연주한다. (Score: 0.3670)
+한 남자가 말을 탄다. (Score: 0.2322)
+그 여자가 아이를 돌본다. (Score: 0.1980)
+한 남자가 담으로 싸인 땅에서 백마를 타고 있다. (Score: 0.1628)
+
+
+======================
+
+
+Query: 치타가 들판을 가로 질러 먹이를 쫓는다.
+
+Top 5 most similar sentences in corpus:
+치타 한 마리가 먹이 뒤에서 달리고 있다. (Score: 0.7756)
+두 남자가 수레를 숲 속으로 밀었다. (Score: 0.1814)
+한 남자가 말을 탄다. (Score: 0.1666)
+원숭이 한 마리가 드럼을 연주한다. (Score: 0.1530)
+한 남자가 담으로 싸인 땅에서 백마를 타고 있다. (Score: 0.1270)
+
 ```
 
 ## Citing
