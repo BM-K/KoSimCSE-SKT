@@ -32,7 +32,7 @@ pip install -r requirements.txt
    - max sequence length: 50
    - evaluation steps during training: 250
    
- - Run training
+ - Run train -> test -> semantic_search
   ```
   bash run_example.sh
   ```
