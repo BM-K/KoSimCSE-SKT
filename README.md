@@ -1,6 +1,6 @@
 # KoSimCSE
  - Korean Simple Contrastive Learning of Sentence Embeddings implementation using pytorch<br>
-   - [SimCSE](https://arxiv.org/abs/2104.08821) <br>
+   - [SimCSE](https://arxiv.org/abs/2104.08821) <br> <br>
  <img src=https://user-images.githubusercontent.com/55969260/128805705-2381ad67-edc2-4070-ae36-a266122b9319.png> <br>
 ## Installation
 ```
@@ -39,7 +39,7 @@ pip install -r requirements.txt
 ## Pre-Trained Models
   - Using BERT [CLS] token representation
   - Pre-Trained model check point <br>
-    - [Google Sharing](https://drive.google.com/drive/folders/1qiqqIucgqavAMmAn1HFJyLL9LZ2U6cbx?usp=sharing)
+    - [Google Drive Sharing](https://drive.google.com/drive/folders/1qiqqIucgqavAMmAn1HFJyLL9LZ2U6cbx?usp=sharing)
     - ./output/nli_checkpoint.pt
 
 ## Performance
@@ -134,15 +134,6 @@ Top 5 most similar sentences in corpus:
 ```
 
 ## Citing
-### KorNLU Datasets
-```bibtex
-@article{ham2020kornli,
-  title={KorNLI and KorSTS: New Benchmark Datasets for Korean Natural Language Understanding},
-  author={Ham, Jiyeon and Choe, Yo Joong and Park, Kyubyong and Choi, Ilji and Soh, Hyungjoon},
-  journal={arXiv preprint arXiv:2004.03289},
-  year={2020}
-}
-```
 ### SimCSE
 ```bibtex
 @article{gao2021simcse,
@@ -150,5 +141,14 @@ Top 5 most similar sentences in corpus:
    author={Gao, Tianyu and Yao, Xingcheng and Chen, Danqi},
    journal={arXiv preprint arXiv:2104.08821},
    year={2021}
+}
+```
+### KorNLU Datasets
+```bibtex
+@article{ham2020kornli,
+  title={KorNLI and KorSTS: New Benchmark Datasets for Korean Natural Language Understanding},
+  author={Ham, Jiyeon and Choe, Yo Joong and Park, Kyubyong and Choi, Ilji and Soh, Hyungjoon},
+  journal={arXiv preprint arXiv:2004.03289},
+  year={2020}
 }
 ```
