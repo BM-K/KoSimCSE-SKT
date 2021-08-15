@@ -54,6 +54,11 @@ pip install -r requirements.txt
 python SemanticSearch.py
 ```
 ```python
+import numpy as np
+from model.utils import pytorch_cos_sim
+from data.dataloader import convert_to_tensor, example_model_setting
+
+
 def main():
     model_ckpt = './output/nli_checkpoint.pt'
     model, transform, device = example_model_setting(model_ckpt)
