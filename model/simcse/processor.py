@@ -128,7 +128,7 @@ class Processor():
             self.config['optimizer'].step()
             self.config['scheduler'].step()
 
-            self.progress(train_loss)
+            self.progress(train_loss.data)
 
             if self.model_progress['iter'] % self.args.eval_steps == 0 or self.model_progress['iter'] == self.total_steps:
                 valid_score = self.valid()
