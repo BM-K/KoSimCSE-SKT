@@ -15,9 +15,6 @@ from transformers import get_linear_schedule_with_warmup
 logger = logging.getLogger(__name__)
 
 
-# os.environ["CUDA_VISIBLE_DEVICES"] = '0, 1'
-
-
 class Processor():
 
     def __init__(self, args):
