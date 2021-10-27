@@ -8,7 +8,7 @@ python main.py \
   --batch_size 256 \
   --epochs 3 \
   --eval_steps 250 \
-  --lr 0.00005 \
+  --lr 0.0001 \
   --warmup_ratio 0.05 \
   --temperature 0.05 \
   --path_to_data ./data/ \
