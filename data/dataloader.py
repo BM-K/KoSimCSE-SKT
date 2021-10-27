@@ -87,31 +87,31 @@ class ModelDataLoader(Dataset):
 
         if self.type == 'train':
             inputs = {'anchor': {
-                'source': torch.tensor(self.anchor[index][0]),
+                'source': torch.LongTensor(self.anchor[index][0]),
                 'valid_length': torch.tensor(self.anchor[index][1]),
-                'segment_ids': torch.tensor(self.anchor[index][2])
+                'segment_ids': torch.LongTensor(self.anchor[index][2])
                 },
                       'positive': {
-                'source': torch.tensor(self.positive[index][0]),
+                'source': torch.LongTensor(self.positive[index][0]),
                 'valid_length': torch.tensor(self.positive[index][1]),
-                'segment_ids': torch.tensor(self.positive[index][2])
+                'segment_ids': torch.LongTensor(self.positive[index][2])
                 },
                       'negative': {
-                'source': torch.tensor(self.negative[index][0]),
+                'source': torch.LongTensor(self.negative[index][0]),
                 'valid_length': torch.tensor(self.negative[index][1]),
-                'segment_ids': torch.tensor(self.negative[index][2])
+                'segment_ids': torch.LongTensor(self.negative[index][2])
                 }}
         else:
 
             inputs = {'sentence_1': {
-                'source': torch.tensor(self.sentence_1[index][0]),
+                'source': torch.LongTensor(self.sentence_1[index][0]),
                 'valid_length': torch.tensor(self.sentence_1[index][1]),
-                'segment_ids': torch.tensor(self.sentence_1[index][2])
+                'segment_ids': torch.LongTensor(self.sentence_1[index][2])
                 },
                       'sentence_2': {
-                'source': torch.tensor(self.sentence_2[index][0]),
+                'source': torch.LongTensor(self.sentence_2[index][0]),
                 'valid_length': torch.tensor(self.sentence_2[index][1]),
-                'segment_ids': torch.tensor(self.sentence_2[index][2])
+                'segment_ids': torch.LongTensor(self.sentence_2[index][2])
                 },
                       'label': torch.FloatTensor([self.label[index]])}
 
@@ -175,8 +175,8 @@ def convert_to_tensor(corpus, transform):
         tensor_valid_length.append(numpy.array([valid_length]))
         tensor_segment_ids.append(segment_ids)
 
-    inputs = {'source': torch.tensor(tensor_corpus),
-              'segment_ids': torch.tensor(tensor_segment_ids),
+    inputs = {'source': torch.LongTensor(tensor_corpus),
+              'segment_ids': torch.LongTensor(tensor_segment_ids),
               'valid_length': torch.tensor(tensor_valid_length)}
 
     return inputs
