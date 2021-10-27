@@ -46,7 +46,7 @@ pip install -r requirements.txt
 |Model|Cosine Pearson|Cosine Spearman|Euclidean Pearson|Euclidean Spearman|Manhattan Pearson|Manhattan Spearman|Dot Pearson|Dot Spearman|
 |:------------------------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 |KoSBERT_SKT*|78.81|78.47|77.68|77.78|77.71|77.83|75.75|75.22|
-|KoSimCSE_SKT|**82.12**|**82.56**|**81.84**|**81.64**|**81.99**|**81.63**|**79.55**|**79.19**|
+|KoSimCSE_SKT|**82.12**|**82.56**|**81.84**|**81.63**|**81.99**|**81.74**|**79.55**|**79.19**|
  - \*: [KoSBERT_SKT](https://github.com/BM-K/KoSentenceBERT_SKT)
 ## Example Downstream Task
 ### Semantic Search
