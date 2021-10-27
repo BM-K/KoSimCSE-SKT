@@ -27,7 +27,7 @@ pip install -r requirements.txt
    - dropout: 0.1
    - batch size: 256
    - temperature: 0.05
-   - learning rate: 5e-5
+   - learning rate: 1e-4
    - warm-up ratio: 0.05
    - max sequence length: 50
    - evaluation steps during training: 250
@@ -46,7 +46,7 @@ pip install -r requirements.txt
 |Model|Cosine Pearson|Cosine Spearman|Euclidean Pearson|Euclidean Spearman|Manhattan Pearson|Manhattan Spearman|Dot Pearson|Dot Spearman|
 |:------------------------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 |KoSBERT_SKT*|78.81|78.47|77.68|77.78|77.71|77.83|75.75|75.22|
-|KoSimCSE_SKT|**81.55**|**82.11**|**81.70**|**81.69**|**81.65**|**81.60**|**78.19**|**77.18**|
+|KoSimCSE_SKT|**82.12**|**82.56**|**81.84**|**81.64**|**81.99**|**81.63**|**79.55**|**79.19**|
  - \*: [KoSBERT_SKT](https://github.com/BM-K/KoSentenceBERT_SKT)
 ## Example Downstream Task
 ### Semantic Search
@@ -104,11 +104,11 @@ def main():
 Query: 한 남자가 파스타를 먹는다.
 
 Top 5 most similar sentences in corpus:
-한 남자가 음식을 먹는다. (Score: 0.6002)
-한 남자가 빵 한 조각을 먹는다. (Score: 0.5938)
-치타 한 마리가 먹이 뒤에서 달리고 있다. (Score: 0.0696)
-한 남자가 말을 탄다. (Score: 0.0328)
-원숭이 한 마리가 드럼을 연주한다. (Score: -0.0048)
+한 남자가 음식을 먹는다. (Score: 0.6146)
+한 남자가 빵 한 조각을 먹는다. (Score: 0.4922)
+한 남자가 말을 탄다. (Score: 0.0797)
+한 남자가 담으로 싸인 땅에서 백마를 타고 있다. (Score: 0.0183)
+한 여자가 바이올린을 연주한다. (Score: 0.0041)
 
 
 ======================
@@ -117,11 +117,11 @@ Top 5 most similar sentences in corpus:
 Query: 고릴라 의상을 입은 누군가가 드럼을 연주하고 있다.
 
 Top 5 most similar sentences in corpus:
-원숭이 한 마리가 드럼을 연주한다. (Score: 0.6489)
-한 여자가 바이올린을 연주한다. (Score: 0.3670)
-한 남자가 말을 탄다. (Score: 0.2322)
-그 여자가 아이를 돌본다. (Score: 0.1980)
-한 남자가 담으로 싸인 땅에서 백마를 타고 있다. (Score: 0.1628)
+원숭이 한 마리가 드럼을 연주한다. (Score: 0.5087)
+한 여자가 바이올린을 연주한다. (Score: 0.4180)
+한 남자가 말을 탄다. (Score: 0.3403)
+그 여자가 아이를 돌본다. (Score: 0.2689)
+한 남자가 담으로 싸인 땅에서 백마를 타고 있다. (Score: 0.1671)
 
 
 ======================
@@ -130,11 +130,12 @@ Top 5 most similar sentences in corpus:
 Query: 치타가 들판을 가로 질러 먹이를 쫓는다.
 
 Top 5 most similar sentences in corpus:
-치타 한 마리가 먹이 뒤에서 달리고 있다. (Score: 0.7756)
-두 남자가 수레를 숲 속으로 밀었다. (Score: 0.1814)
-한 남자가 말을 탄다. (Score: 0.1666)
-원숭이 한 마리가 드럼을 연주한다. (Score: 0.1530)
-한 남자가 담으로 싸인 땅에서 백마를 타고 있다. (Score: 0.1270)
+치타 한 마리가 먹이 뒤에서 달리고 있다. (Score: 0.8106)
+한 남자가 말을 탄다. (Score: 0.1910)
+한 남자가 담으로 싸인 땅에서 백마를 타고 있다. (Score: 0.1614)
+두 남자가 수레를 숲 속으로 밀었다. (Score: 0.1557)
+원숭이 한 마리가 드럼을 연주한다. (Score: 0.1269)
+
 
 ```
 
