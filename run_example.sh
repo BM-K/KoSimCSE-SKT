@@ -12,8 +12,8 @@ python main.py \
   --warmup_ratio 0.05 \
   --temperature 0.05 \
   --path_to_data ./data/ \
-  --train_data train_nli_sample \
-  --valid_data valid_sts_sample
+  --train_data train_nli_sample.tsv \
+  --valid_data valid_sts_sample.tsv
 
 echo "Start Testing"
 
@@ -28,7 +28,7 @@ python main.py \
   --warmup_ratio 0.05 \
   --temperature 0.05 \
   --path_to_data ./data/ \
-  --test_data test_sts_sample \
+  --test_data test_sts_sample.tsv \
   --path_to_saved_model output/best_checkpoint.pt
 
 echo "Semantic Search"
