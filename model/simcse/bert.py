@@ -7,9 +7,9 @@ class BERT(nn.Module):
         super(BERT, self).__init__()
         self.bert = bert
 
-    def forward(self, inputs, type):
+    def forward(self, inputs, mode):
 
-        if type == 'train':
+        if mode == 'train':
             anchor_attention_mask = self.gen_attention_mask(inputs['anchor']['source'],
                                                             inputs['anchor']['valid_length'])
 
