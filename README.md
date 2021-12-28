@@ -48,6 +48,8 @@ pip install -r requirements.txt
 |KoSBERT<sup>†</sup><sub>SKT</sub>|78.81|78.47|77.68|77.78|77.71|77.83|75.75|75.22|
 |KoSimCSE<sub>SKT<sub>|**82.12**|**82.56**|**81.84**|**81.63**|**81.99**|**81.74**|**79.55**|**79.19**|
  - †: [KoSBERT<sup>†</sup><sub>SKT</sub>](https://github.com/BM-K/KoSentenceBERT_SKT)
+ - Performance comparison with other models https://github.com/BM-K/Sentence-Embedding-is-all-you-need#performance .
+ 
 ## Example Downstream Task
 ### Semantic Search
 ```
