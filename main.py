@@ -9,12 +9,13 @@ def main(args, logger) -> None:
 
     if args.train == 'True':
         logger.info('Start Training')
+        
         for epoch in range(args.epochs):
             processor.train(epoch+1)
 
     if args.test == 'True':
         logger.info("Start Test")
-
+        
         processor.test()
         processor.metric.print_size_of_model(config['model'])
         processor.metric.count_parameters(config['model'])
