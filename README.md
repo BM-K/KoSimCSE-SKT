@@ -142,7 +142,6 @@ Top 5 most similar sentences in corpus:
 ```
 
 ## Citing
-### SimCSE
 ```bibtex
 @article{gao2021simcse,
    title={{SimCSE}: Simple Contrastive Learning of Sentence Embeddings},
@@ -150,13 +149,10 @@ Top 5 most similar sentences in corpus:
    journal={arXiv preprint arXiv:2104.08821},
    year={2021}
 }
-```
-### KorNLU Datasets
-```bibtex
 @article{ham2020kornli,
-  title={KorNLI and KorSTS: New Benchmark Datasets for Korean Natural Language Understanding},
-  author={Ham, Jiyeon and Choe, Yo Joong and Park, Kyubyong and Choi, Ilji and Soh, Hyungjoon},
-  journal={arXiv preprint arXiv:2004.03289},
-  year={2020}
+ title={KorNLI and KorSTS: New Benchmark Datasets for Korean Natural Language Understanding},
+ author={Ham, Jiyeon and Choe, Yo Joong and Park, Kyubyong and Choi, Ilji and Soh, Hyungjoon},
+ journal={arXiv preprint arXiv:2004.03289},
+ year={2020}
 }
 ```
