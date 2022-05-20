@@ -42,11 +42,17 @@ pip install -r requirements.txt
     - [Google Drive Sharing](https://drive.google.com/drive/folders/1qiqqIucgqavAMmAn1HFJyLL9LZ2U6cbx?usp=sharing)
     - ./output/nli_checkpoint.pt
 
-## Performance
-|Model|Cosine Pearson|Cosine Spearman|Euclidean Pearson|Euclidean Spearman|Manhattan Pearson|Manhattan Spearman|Dot Pearson|Dot Spearman|
-|:------------------------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-|KoSBERT<sup>†</sup><sub>SKT</sub>|78.81|78.47|77.68|77.78|77.71|77.83|75.75|75.22|
-|KoSimCSE<sub>SKT<sub>|**82.12**|**82.56**|**81.84**|**81.63**|**81.99**|**81.74**|**79.55**|**79.19**|
+## Performance 
+ | Model                  | AVG | Cosine Pearson | Cosine Spearman | Euclidean Pearson | Euclidean Spearman | Manhattan Pearson | Manhattan Spearman | Dot Pearson | Dot Spearman |
+|------------------------|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| KoSBERT<sup>†</sup><sub>SKT</sub>    | 77.40 | 78.81 | 78.47 | 77.68 | 77.78 | 77.71 | 77.83 | 75.75 | 75.22 |
+| KoSBERT              | 80.39 | 82.13 | 82.25 | 80.67 | 80.75 | 80.69 | 80.78 | 77.96 | 77.90 |
+| KoSRoBERTa           | 81.64 | 81.20 | 82.20 | 81.79 | 82.34 | 81.59 | 82.20 | 80.62 | 81.25 |
+| | | | | | | | | |
+| KoSimCSE-BERT<sub>SKT</sub>   | 81.32 | 82.12 | 82.56 | 81.84 | 81.63 | 81.99 | 81.74 | 79.55 | 79.19 |
+| KoSimCSE-BERT<sub>KLUE</sub>              | 83.37 | 83.22 | 83.58 | 83.24 | 83.60 | 83.15 | 83.54 | 83.13 | 83.49 |
+| KoSimCSE-RoBERTa<sub>KLUE</sub>          | 83.65 | 83.60 | 83.77 | 83.54 | 83.76 | 83.55 | 83.77 | 83.55 | 83.64 |
+ 
  - †: [KoSBERT<sup>†</sup><sub>SKT</sub>](https://github.com/BM-K/KoSentenceBERT_SKT)
  - Performance comparison with other models [[KLUE-PLMs]](https://github.com/BM-K/Sentence-Embedding-is-all-you-need#performance).
  
