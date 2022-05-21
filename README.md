@@ -54,7 +54,7 @@ pip install -r requirements.txt
 | KoSimCSE-RoBERTa<sub>KLUE</sub>          | 83.65 | 83.60 | 83.77 | 83.54 | 83.76 | 83.55 | 83.77 | 83.55 | 83.64 |
  
  - †: [KoSBERT<sup>†</sup><sub>SKT</sub>](https://github.com/BM-K/KoSentenceBERT_SKT)
- - Performance comparison with other models [[KLUE-PLMs]](https://github.com/BM-K/Sentence-Embedding-is-all-you-need#performance).
+ - Performance comparison with other models [[KLUE-PLMs]](https://github.com/BM-K/Sentence-Embedding-is-all-you-need#korean-sentence-embedding).
  
 ## Example Downstream Task
 ### Semantic Search
