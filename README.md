@@ -37,7 +37,8 @@ pip install -r requirements.txt
   bash run_example.sh
   ```
 ## Pre-Trained Models
-  - Using BERT [CLS] token representation
+  - Using BERT pooled [CLS] token representation
+    - It may be better to use only the [CLS] token representation, not pooled
   - Pre-Trained model check point <br>
     - [Google Drive Sharing](https://drive.google.com/drive/folders/1qiqqIucgqavAMmAn1HFJyLL9LZ2U6cbx?usp=sharing)
     - ./output/nli_checkpoint.pt
