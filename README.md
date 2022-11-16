@@ -1,7 +1,9 @@
 # KoSimCSE
  - Simple Contrastive Learning of Korean Sentence Embeddings Implementation <br>
-   - [SimCSE](https://arxiv.org/abs/2104.08821) <br> <br>
- <img src=https://user-images.githubusercontent.com/55969260/128805705-2381ad67-edc2-4070-ae36-a266122b9319.png> <br>
+   - [SimCSE-[EMNLP 2021]](https://arxiv.org/abs/2104.08821) <br>
+   - [[Github]](https://github.com/princeton-nlp/SimCSE) Official implementation of SimCSE <br>
+ <img src=https://user-images.githubusercontent.com/55969260/128805705-2381ad67-edc2-4070-ae36-a266122b9319.png> 
+ 
 ## Installation
 ```
 git clone https://github.com/BM-K/KoSimCSE.git
